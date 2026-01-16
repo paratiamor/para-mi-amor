@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#fff0f5, #ffe4ec);
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff4d79;
+  color: white;
+  cursor: pointer;
+}
+
+.oculto {
+  display: none;
+}
+
+.mensaje {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.galeria {
+  max-width: 900px;
+  margin: auto;
+}
+
+.foto {
+  margin: 25px 0;
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 1s ease;
+}
+
+.foto.visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.izquierda {
+  text-align: left;
+  padding-left: 60px;
+}
+
+.derecha {
+  text-align: right;
+  padding-right: 60px;
+}
+
+.foto img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.foto span {
+  display: block;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.video iframe {
+  width: 90%;
+  max-width: 600px;
+  height: 340px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+/* ❤️ Corazones flotando */
+.corazones span {
+  position: fixed;
+  font-size: 20px;
+  animation: flotar 6s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@keyframes flotar {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+/* ❤️ Corazones mouse */
+.mouse-hearts span {
+  position: fixed;
+  font-size: 18px;
+  pointer-events: none;
+  animation: heartFade 1s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes heartFade {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.6) translateY(-20px); }
+}
+
+/* 🌸 Pétalos */
+.petalos span {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: petaloFall linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+@keyframes petaloFall {
+  from { transform: translateY(-10vh) rotate(0deg); }
+  to { transform: translateY(110vh) rotate(360deg); }
+}
+/* 🔍 Efecto al pasar el mouse por la foto (agrandar suavemente) */
+.foto img {
+  transition: transform 0.35s ease;
+}
+
+.foto img:hover {
+  transform: scale(1.15);
+}
